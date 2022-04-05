@@ -1,0 +1,10 @@
+# yarn / npm
+node_modules/
+yarn-error.log
+
+# 11ty output
+_site/
+dist/
+
+# parcel
+.parcel-cache/
