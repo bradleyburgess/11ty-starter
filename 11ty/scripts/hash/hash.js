@@ -7,7 +7,7 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const rename = promisify(fs.rename);
 
-const dir = require('./11ty/constants/dir');
+const dir = require('../../constants/dir');
 
 const cssFilePath = path.join(dir.output, 'css', 'index.css');
 const jsFilePath = path.join(dir.output, 'js', 'index.js');
@@ -17,7 +17,7 @@ const hashedFiles = {
   js: '',
 };
 
-(async () => {
+module.exports = async () => {
   // CSS
   await readFile(cssFilePath).then(async (buffer) => {
     const hash = md5(buffer).slice(0, 16);
@@ -42,4 +42,4 @@ const hashedFiles = {
   await writeFile(path.join(dir.input, dir.data, 'hash.json'), JSON.stringify(hashedFiles)).then(
     () => console.log('Wrote data to hash.json')
   );
-})();
+};

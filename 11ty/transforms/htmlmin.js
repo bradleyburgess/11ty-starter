@@ -7,7 +7,7 @@ const htmlminOptions = {
 };
 
 module.exports = function (content, outputPath) {
-  if (process.env.ELEVENTY_ENV !== 'production') return content;
+  if (process.env.NODE_ENV !== 'production') return content;
   if (!outputPath || !outputPath.endsWith('.html')) return content;
   const minified = minify(content, htmlminOptions);
   return minified;
