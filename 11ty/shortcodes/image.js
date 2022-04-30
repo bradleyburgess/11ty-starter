@@ -12,8 +12,8 @@ const defaults = {
 };
 
 module.exports = async function (src, alt, _options) {
-  const options = _options ? JSON.parse(_options) : {};
-  const { widths, formats, loading, sizes } = Object.assign({}, defaults, options);
+  const options = { ...defaults, ...(options ?? {}) };
+  const { widths, formats, loading, sizes } = options;
 
   if (alt === undefined) {
     console.error(`\x1b[31mMissing alt for ${src} in ${this.page.inputPath}`);

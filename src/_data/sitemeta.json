@@ -3,5 +3,6 @@
   "author": "Bradley Burgess",
   "twitter": "@bburgess_keys",
   "description": "A test site",
-  "url": "localhost"
+  "url": "localhost",
+  "favicon": "./src/img/favicon.svg"
 }

@@ -6,7 +6,7 @@ const settings = require('../constants/settings');
 const checkRemoteSrc = require('../helpers/checkRemoteSrc');
 const toAbsoluteUrl = require('../filters/toAbsoluteUrl');
 
-const widths = [1080];
+const widths = [settings.ogImage.width];
 const format = settings.ogImage.format;
 
 module.exports = async function (src, alt) {
