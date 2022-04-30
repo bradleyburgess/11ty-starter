@@ -4,14 +4,15 @@
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=production run-s clean build:parcel hash build:eleventy",
-    "build:parcel": "parcel build",
     "build:eleventy": "eleventy",
-    "clean": "rimraf _site dist",
-    "debug": "cross-env DEBUG-* yarn build",
+    "build:parcel": "parcel build",
+    "clean": "rimraf 'dist/!(img)'",
+    "clean:deep": "rimraf dist",
+    "debug": "cross-env DEBUG=Eleventy* yarn build",
+    "debug:img": "cross-env DEBUG=EleventyImg yarn build",
     "dev": "cross-env NODE_ENV=development run-s hash watch",
     "hash": "node ./11ty/scripts/hash/index.js",
-    "unhash": "node unHashCssJs.js",
-    "lint": "eslint",
+    "lint": "eslint ./",
     "start": "yarn dev",
     "watch": "run-p watch:*",
     "watch:bs": "browser-sync start --config .bsconfig.js",
@@ -19,19 +20,23 @@
     "watch:parcel": "parcel watch"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "@babel/core": "^7.12.0",
-    "@parcel/transformer-sass": "2.4.1",
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-img": "^2.0.0",
+    "@babel/core": "^7.17.9",
+    "@parcel/transformer-sass": "^2.5.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "browser-sync": "^2.27.9",
     "cross-env": "^7.0.3",
-    "eslint": "^8.12.0",
+    "eleventy-plugin-broken-links": "^1.6.3",
+    "eleventy-plugin-gen-favicons": "^1.1.0",
+    "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "html-minifier": "^4.0.0",
     "md5": "^2.3.0",
+    "netlify-plugin-11ty": "^1.1.0",
     "npm-run-all": "^4.1.5",
-    "parcel": "^2.4.1",
+    "parcel": "^2.5.0",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2"
   },
@@ -42,7 +47,9 @@
       "distDir": "./dist/css"
     },
     "js": {
-      "source": "./src/js/index.js",
+      "source": [
+        "./src/js/index.js"
+      ],
       "distDir": "./dist/js"
     }
   }

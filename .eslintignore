@@ -1,0 +1,5 @@
+node_modules/
+dist/
+
+# unignore config files
+!.*.js

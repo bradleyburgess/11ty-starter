@@ -3,5 +3,4 @@ module.exports = {
   output: 'dist',
   includes: '_includes',
   data: '_data',
-  layouts: '_layouts',
 };

@@ -1,0 +1,17 @@
+{% if (permalink == '/') or not title %}{% set docTitle = sitemeta.title %}{% else %}{% set docTitle = [title, sitemeta.title] | join(" | ") %}{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index{{ hash.css }}.css">
+    <script src="/js/index{{ hash.js }}.js" defer></script>
+    <title>{{ docTitle }}</title>
+    {% if sitemeta.favicon %}{% favicons sitemeta.favicon %}{% endif %}
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {{ content | safe }}
+</body>
+</html>

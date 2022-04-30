@@ -8,6 +8,7 @@ module.exports = {
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   rules: {
     'prettier/prettier': ['error'],
+    'no-unused-vars': 'warn',
   },
   parserOptions: {
     sourceType: 'module',

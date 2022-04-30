@@ -6,5 +6,9 @@ yarn-error.log
 _site/
 dist/
 
-# parcel
+# testing
+_testing/
+
+# cache
+.cache/
 .parcel-cache/

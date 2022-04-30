@@ -1,0 +1,8 @@
+{% extends 'layouts/base.njk' %}
+{% if not title %}{% set metatitle = sitemeta.title %}{% else %}{% set metatitle = title %}{% endif %}
+{% if not description %}{% set description = sitemeta.description %}{% endif %}
+
+{% block head %}
+    {% ogmeta metatitle, page.url | toAbsoluteUrl, description %}
+    {% if og_image %}{% ogimage og_image.src, og_image.alt %}{% endif %}
+{% endblock %}

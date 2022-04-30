@@ -1,0 +1,17 @@
+[build]
+  publish = "dist"
+  command = "yarn build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self';"
+
+[[plugins]]
+    package = "netlify-plugin-11ty"
+    [plugins.inputs]
+        cache_img = './img'
+        cache_img_httpHeader = true
+        cache_assets = '../.cache'
+        # for other assets
+        cache_other = []
