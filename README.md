@@ -38,7 +38,7 @@ attempt to include an array of common and useful features out-of-the-box:
 - GitHub action for checking Lighthouse scores after build
 - dependabot pull requests for dependency updates
 
-## Gettings Started
+## Getting Started
 
 1. Click "Use this template" above
 2. `git clone` the repo locally
