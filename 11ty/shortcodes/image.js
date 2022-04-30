@@ -12,7 +12,7 @@ const defaults = {
 };
 
 module.exports = async function (src, alt, _options) {
-  const options = { ...defaults, ...(options ?? {}) };
+  const options = { ...defaults, ...(_options ?? {}) };
   const { widths, formats, loading, sizes } = options;
 
   if (alt === undefined) {
