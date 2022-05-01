@@ -35,7 +35,8 @@ attempt to include an array of common and useful features out-of-the-box:
   [`eleventy-plugin-broken-links`](https://www.npmjs.com/package/eleventy-plugin-broken-links)
 - code linting with `eslint` and formatting with `prettier`
 - convenient `dev` and `build` npm scripts
-- GitHub action for checking Lighthouse scores after build
+- GitHub action for checking Lighthouse scores after build, including
+  caching of `yarn` dependencies and built output
 - dependabot pull requests for dependency updates
 
 ## Getting Started
