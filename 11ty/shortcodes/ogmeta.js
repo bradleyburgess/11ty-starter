@@ -11,6 +11,5 @@ ${sitemeta.title && `<meta property="og:site_name" content="${sanitize(sitemeta.
 ${sitemeta.twitter && `<meta name="twitter:creator" content="${sitemeta.twitter}" />`}
 <meta name="twitter:description" content="${sanitize(description)}" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="description" content="${sanitize(description)}" />
 `;
 };

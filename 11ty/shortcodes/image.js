@@ -8,7 +8,7 @@ const defaults = {
   formats: ['webp', 'avif', 'jpg'],
   loading: 'lazy',
   sizes: ['100vw'],
-  widths: [600, 1200, 1800, 2400, 4200, null],
+  widths: [600, 900, 1200, 1800, 2400, 4200, null],
 };
 
 module.exports = async function (src, alt, _options) {
