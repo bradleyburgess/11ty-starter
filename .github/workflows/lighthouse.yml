@@ -5,7 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+
+      - name: Cache build output
+        id: cache-build
+        uses: actions/cache@v3
+        with:
+          path: dist
+          key: ${{ runner.os }}-cache-build
+
+      - name: Run Lighthouse
+        uses: actions/setup-node@v1
+        id: lighthouse-ci
         with:
           node-version: 14
       - run: yarn && npm install -g @lhci/cli@0.9.x
