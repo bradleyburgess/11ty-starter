@@ -1,3 +1,4 @@
+require('dotenv').config();
 const dir = require('./11ty/constants/dir');
 
 const brokenLinks = require('eleventy-plugin-broken-links');

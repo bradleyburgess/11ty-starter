@@ -12,3 +12,8 @@ _testing/
 # cache
 .cache/
 .parcel-cache/
+
+# env
+.env
+.env.production
+.env.development

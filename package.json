@@ -27,6 +27,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "browser-sync": "^2.27.9",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
     "eleventy-plugin-broken-links": "^1.6.3",
     "eleventy-plugin-gen-favicons": "^1.1.0",
     "eslint": "^8.14.0",
