@@ -9,6 +9,8 @@
   <meta name="description" content="{{ description }}" />
   {% block ogmeta %}{% endblock %}
   <title>{{ docTitle }}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>{{ googlefonts | cssmin }}</style>
   <link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen" />
   {% if pageCss %}<link rel="stylesheet" href="/css/{{ pageCss }}{{ hash.css[pageCss] }}.css" media="screen" />{% endif %}
   {% if hash.js.index != "" %}<script src="/js/index{{ hash.js.index }}.js" defer></script>{% endif %}
