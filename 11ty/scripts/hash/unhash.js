@@ -2,10 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { promisify } = require('util');
 const dir = require('../../constants/dir');
+const generateHashedFiles = require('./generateHashedFiles');
 
 const writeFile = promisify(fs.writeFile);
 
-const hashedFiles = { css: '', js: '' };
+const hashedFiles = generateHashedFiles();
 
 module.exports = async () => {
   await writeFile(path.join(dir.input, dir.data, 'hash.json'), JSON.stringify(hashedFiles))

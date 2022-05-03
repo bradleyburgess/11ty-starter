@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{{ description }}" />
-  <link rel="stylesheet" href="/css/index{{ hash.css }}.css" media="screen" />
-  <script src="/js/index{{ hash.js }}.js" defer></script>
+  {% block ogmeta %}{% endblock %}
   <title>{{ docTitle }}</title>
+  <link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen" />
+  <script src="/js/index{{ hash.js.index }}.js" defer></script>
   {% if sitemeta.favicon %}{% favicons sitemeta.favicon %}{% endif %}
-  {% block head %}{% endblock %}
 </head>
 <body>
   {{ content | safe }}

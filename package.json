@@ -44,7 +44,9 @@
   "browserslist": "defaults",
   "targets": {
     "css": {
-      "source": "./src/css/index.scss",
+      "source": [
+        "./src/css/index.scss"
+      ],
       "distDir": "./dist/css"
     },
     "js": {
