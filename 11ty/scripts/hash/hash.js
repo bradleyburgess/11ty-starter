@@ -29,7 +29,7 @@ module.exports = async () => {
     await readFile(origFilePath).then(async (buffer) => {
       const hash = md5(buffer).slice(0, 16);
       console.log(`${filebase}.css hash: ${hash}`);
-      const hashedFilePath = path.join(dir.output, 'css', `${filebase}-${hash}.css`);
+      const hashedFilePath = path.join(dir.output, 'css', `${filebase}${hash}.css`);
       await rename(origFilePath, hashedFilePath);
       console.log(`Renamed bundled ${filebase}.css to ${hashedFilePath}`);
       hashedFiles.css[filebase] = hash;
@@ -42,7 +42,7 @@ module.exports = async () => {
     await readFile(origFilePath).then(async (buffer) => {
       const hash = md5(buffer).slice(0, 16);
       console.log(`${filebase}.js hash: ${hash}`);
-      const hashedFilePath = path.join(dir.output, 'js', `${filebase}-${hash}.js`);
+      const hashedFilePath = path.join(dir.output, 'js', `${filebase}${hash}.js`);
       await rename(origFilePath, hashedFilePath);
       console.log(`Renamed bundled ${filebase}.js to ${hashedFilePath}`);
       hashedFiles.js[filebase] = hash;
