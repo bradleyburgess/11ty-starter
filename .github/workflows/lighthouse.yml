@@ -38,7 +38,7 @@ jobs:
           key: ${{ runner.os }}-build-cache
 
       - name: Install dependencies
-        run: yarn && npm install -g @lhci/cli@0.9.x
+        run: yarn && yarn global add @lhci/cli@0.9.x
 
       - name: Build site
         run: yarn build
