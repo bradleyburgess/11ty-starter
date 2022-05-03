@@ -5,6 +5,7 @@ yarn-error.log
 # 11ty output
 _site/
 dist/
+src/_data/hash.json
 
 # testing
 _testing/
