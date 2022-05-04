@@ -37,7 +37,7 @@
       {% endfor %}
     {% endset %}
     <script>{{ js | jsmin }}</script>
-  {% endif $}
+  {% endif %}
 
   {% if hash.css | has('index') %}<link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen" />{% endif %}
   {% if pageCss %}
