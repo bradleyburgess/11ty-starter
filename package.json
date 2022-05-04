@@ -6,7 +6,7 @@
     "build": "cross-env NODE_ENV=production run-s clean build:parcel hash build:eleventy",
     "build:eleventy": "eleventy",
     "build:parcel": "parcel build --no-source-maps",
-    "clean": "rimraf 'dist/!(img)' 'src/_includes/criticalcss'",
+    "clean": "rimraf 'dist/!(img)' 'src/_includes/critical-css'",
     "clean:deep": "rimraf dist",
     "debug": "cross-env DEBUG=Eleventy* yarn build",
     "debug:img": "cross-env DEBUG=EleventyImg yarn build",
