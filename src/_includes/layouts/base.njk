@@ -39,7 +39,7 @@
   {% endif %}
   {% if sitemeta | has('favicon') %}{% favicons sitemeta.favicon %}{% endif %}
 </head>
-<body>
+<body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
   {{ content | safe }}
 </body>
 </html>
