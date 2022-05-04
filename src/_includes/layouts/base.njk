@@ -21,7 +21,7 @@
     {% set css %}
       {{ googlefonts | cssmin | safe }}
       {% if criticalCss %}
-        {% for item in criticalCss %}
+        {% for item in criticalCss | makeArray %}
           {% include "critical-css/" + item + ".css" %}
         {% endfor %}
       {% endif %}
@@ -29,13 +29,23 @@
   <style>{{ css | cssmin }}</style>
   {% endif %}
 
+  {# inline js #}
+  {% if criticalJs %}
+    {% set js %}
+      {% for item in criticalJs | makeArray %}
+      {% include "critical-js/" + item + ".js" %}
+      {% endfor %}
+    {% endset %}
+    <script>{{ js | jsmin }}</script>
+  {% endif $}
+
   {% if hash.css | has('index') %}<link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen" />{% endif %}
   {% if pageCss %}
-    {% for item in pageCss %}<link rel="stylesheet" href="/css/{{ item }}{{ hash.css[item] }}.css" media="screen" />{% endfor %}
+    {% for item in pageCss | makeArray %}<link rel="stylesheet" href="/css/{{ item }}{{ hash.css[item] }}.css" media="screen" />{% endfor %}
   {% endif %}
   {% if has.js | has('index') %}<script src="/js/index{{ hash.js.index }}.js" defer></script>{% endif %}
   {% if pageJs %}
-    {% for item in pageJs %}<script src="/js/{{ item }}{{ hash.js[item] }}.js" defer></script>{% endfor %}
+    {% for item in pageJs | makeArray %}<script src="/js/{{ item }}{{ hash.js[item] }}.js" defer></script>{% endfor %}
   {% endif %}
   {% if sitemeta | has('favicon') %}{% favicons sitemeta.favicon %}{% endif %}
 </head>

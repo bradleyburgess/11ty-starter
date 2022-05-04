@@ -13,6 +13,8 @@ const prettierTransform = require('./11ty/transforms/prettier');
 const sanitizeHtmlAttr = require('./11ty/helpers/sanitizeHtmlAttr');
 const toAbsoluteUrlFilter = require('./11ty/filters/toAbsoluteUrl');
 const objectHasFilter = require('./11ty/filters/object-has');
+const makeArrayFilter = require('./11ty/filters/makeArray');
+const jsminFilter = require('./11ty/filters/jsmin');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
@@ -22,6 +24,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('toAbsoluteUrl', toAbsoluteUrlFilter);
   eleventyConfig.addFilter('sanitizeHtmlAttr', sanitizeHtmlAttr);
   eleventyConfig.addFilter('has', objectHasFilter);
+  eleventyConfig.addFilter('makeArray', makeArrayFilter);
+  eleventyConfig.addFilter('jsmin', jsminFilter);
 
   // shortcodes
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
