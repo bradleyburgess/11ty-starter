@@ -29,15 +29,15 @@
   <style>{{ css | cssmin }}</style>
   {% endif %}
 
-  {% if hash.css.index and hash.css.index != "" %}<link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen" />{% endif %}
+  {% if hash.css | has('index') %}<link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen" />{% endif %}
   {% if pageCss %}
     {% for item in pageCss %}<link rel="stylesheet" href="/css/{{ item }}{{ hash.css[item] }}.css" media="screen" />{% endfor %}
   {% endif %}
-  {% if has.js.index and hash.js.index != "" %}<script src="/js/index{{ hash.js.index }}.js" defer></script>{% endif %}
+  {% if has.js | has('index') %}<script src="/js/index{{ hash.js.index }}.js" defer></script>{% endif %}
   {% if pageJs %}
     {% for item in pageJs %}<script src="/js/{{ item }}{{ hash.js[item] }}.js" defer></script>{% endfor %}
   {% endif %}
-  {% if sitemeta.favicon %}{% favicons sitemeta.favicon %}{% endif %}
+  {% if sitemeta | has('favicon') %}{% favicons sitemeta.favicon %}{% endif %}
 </head>
 <body>
   {{ content | safe }}
