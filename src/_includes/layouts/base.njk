@@ -7,13 +7,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{{ description }}" />
-  {% block ogmeta %}{% endblock %}
+  {% ogmeta docTitle, page.url | toAbsoluteUrl, description %}
+  {% if ogImage %}{% ogimage ogImage.src, ogImage.alt %}
+  {% elif sitemeta.ogImage %}{% ogimage sitemeta.ogImage.src, sitemeta.ogImage.alt %}
+  {% endif %}
   <title>{{ docTitle }}</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <style>{{ googlefonts | cssmin }}</style>
-  <link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen" />
-  {% if pageCss %}<link rel="stylesheet" href="/css/{{ pageCss }}{{ hash.css[pageCss] }}.css" media="screen" />{% endif %}
-  {% if hash.js.index != "" %}<script src="/js/index{{ hash.js.index }}.js" defer></script>{% endif %}
+
+  {# google fonts #}
+  {% if googlefonts %}<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />{% endif %}
+
+  {# inline css #}
+  {% if googlefonts or criticalCss %}
+    {% set css %}
+      {{ googlefonts | cssmin | safe }}
+      {% if criticalCss %}
+        {% for item in criticalCss %}
+          {% include "critical-css/" + item + ".css" %}
+        {% endfor %}
+      {% endif %}
+    {% endset %}
+  <style>{{ css | cssmin }}</style>
+  {% endif %}
+
+  {% if hash.css.index and hash.css.index != "" %}<link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen" />{% endif %}
+  {% if pageCss %}
+    {% for item in pageCss %}<link rel="stylesheet" href="/css/{{ item }}{{ hash.css[item] }}.css" media="screen" />{% endfor %}
+  {% endif %}
+  {% if has.js.index and hash.js.index != "" %}<script src="/js/index{{ hash.js.index }}.js" defer></script>{% endif %}
+  {% if pageJs %}
+    {% for item in pageJs %}<script src="/js/{{ item }}{{ hash.js[item] }}.js" defer></script>{% endfor %}
+  {% endif %}
   {% if sitemeta.favicon %}{% favicons sitemeta.favicon %}{% endif %}
 </head>
 <body>

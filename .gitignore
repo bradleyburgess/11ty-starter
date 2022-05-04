@@ -6,6 +6,7 @@ yarn-error.log
 _site/
 dist/
 src/_data/hash.json
+src/_includes/critical-css/
 
 # testing
 _testing/

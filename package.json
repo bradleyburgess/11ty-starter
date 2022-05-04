@@ -5,8 +5,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production run-s clean build:parcel hash build:eleventy",
     "build:eleventy": "eleventy",
-    "build:parcel": "parcel build",
-    "clean": "rimraf 'dist/!(img)'",
+    "build:parcel": "parcel build --no-source-maps",
+    "clean": "rimraf 'dist/!(img)' 'src/_includes/criticalcss'",
     "clean:deep": "rimraf dist",
     "debug": "cross-env DEBUG=Eleventy* yarn build",
     "debug:img": "cross-env DEBUG=EleventyImg yarn build",
@@ -56,6 +56,12 @@
         "./src/js/index.js"
       ],
       "distDir": "./dist/js"
+    },
+    "criticalcss": {
+      "source": [
+        "./src/css/critical/index.scss"
+      ],
+      "distDir": "./src/_includes/critical-css"
     }
   }
 }
