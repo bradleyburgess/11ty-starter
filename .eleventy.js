@@ -12,6 +12,7 @@ const ogMetaShortcode = require('./11ty/shortcodes/ogmeta');
 const prettierTransform = require('./11ty/transforms/prettier');
 const sanitizeHtmlAttr = require('./11ty/helpers/sanitizeHtmlAttr');
 const toAbsoluteUrlFilter = require('./11ty/filters/toAbsoluteUrl');
+const objectHasFilter = require('./11ty/filters/object-has');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
@@ -20,6 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('cssmin', cssminFilter);
   eleventyConfig.addFilter('toAbsoluteUrl', toAbsoluteUrlFilter);
   eleventyConfig.addFilter('sanitizeHtmlAttr', sanitizeHtmlAttr);
+  eleventyConfig.addFilter('has', objectHasFilter);
 
   // shortcodes
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
