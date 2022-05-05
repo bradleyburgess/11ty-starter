@@ -19,14 +19,14 @@
   {# inline css #}
   {% if googlefonts or criticalCss %}
     {% set css %}
-      {{ googlefonts | cssmin | safe }}
+      {% if googlefonts %}{{ googlefonts | safe }}{% endif %}
       {% if criticalCss %}
         {% for item in criticalCss | makeArray %}
           {% include "critical-css/" + item + ".css" %}
         {% endfor %}
       {% endif %}
     {% endset %}
-  <style>{{ css | cssmin }}</style>
+  <style>{{ css | safe }}</style>
   {% endif %}
 
   {# inline js #}

@@ -2,7 +2,6 @@ require('dotenv').config();
 const dir = require('./11ty/constants/dir');
 
 const brokenLinks = require('eleventy-plugin-broken-links');
-const cssminFilter = require('./11ty/filters/cssmin');
 const faviconPlugin = require('eleventy-plugin-gen-favicons');
 const htmlminTransform = require('./11ty/transforms/htmlmin');
 const imageShortcode = require('./11ty/shortcodes/image');
@@ -20,7 +19,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
 
   // filters
-  eleventyConfig.addFilter('cssmin', cssminFilter);
   eleventyConfig.addFilter('toAbsoluteUrl', toAbsoluteUrlFilter);
   eleventyConfig.addFilter('sanitizeHtmlAttr', sanitizeHtmlAttr);
   eleventyConfig.addFilter('has', objectHasFilter);

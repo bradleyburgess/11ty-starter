@@ -4,6 +4,7 @@ const htmlminOptions = {
   useShortDoctype: true,
   removeComment: true,
   collapseWhitespace: true,
+  minifyCSS: true,
 };
 
 module.exports = function (content, outputPath) {
