@@ -2253,16 +2253,17 @@ electron-to-chromium@^1.4.118:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.118.tgz#2d917c71712dac9652cc01af46c7d0bd51552974"
   integrity sha512-maZIKjnYDvF7Fs35nvVcyr44UcKNwybr93Oba2n3HkKDFAtk0svERkLN/HyczJDS3Fo4wU9th9fUQd09ZLtj1w==
 
-eleventy-plugin-broken-links@^1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/eleventy-plugin-broken-links/-/eleventy-plugin-broken-links-1.6.3.tgz#8c63f2b541fbffedc47e0a875bada1f56fa08809"
-  integrity sha512-i2oA38ypL3xfpV8ThH2MqvhfsdKeqsgWT+Dfi4scaEx95BJMhyLrcO+y8+Jt4s3kpSvFP1ujohZUUXMOpLT77Q==
+eleventy-plugin-broken-links@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/eleventy-plugin-broken-links/-/eleventy-plugin-broken-links-2.0.1.tgz#4bb4eaebd853a4b2cefb32cb1b5ef1476124e9ad"
+  integrity sha512-GwzhrWhhxRtgIkJf7c1vCEl3HFDKfWTGW5hArqbRn5htPmWa5Gca/pWbCUw0V8pAxRpIroWxCxzLx9dA8OUrZQ==
   dependencies:
     "@11ty/eleventy-fetch" "^3.0.0"
+    debug "^4.3.4"
     kleur "^4.1.4"
     minimatch "^5.0.1"
     node-html-parser "^5.3.3"
-    url-status-code "^2.0.0"
+    valid-url "^1.0.9"
 
 eleventy-plugin-gen-favicons@^1.1.0:
   version "1.1.0"
@@ -5201,13 +5202,6 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-url-status-code@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/url-status-code/-/url-status-code-2.0.0.tgz#332ee1fabcb73f55321c8e7754e5a17825902367"
-  integrity sha512-ODpSV5o2OM/tldo6sq5BGl6ILQ0htv+1LSv66qQI94vG2quKMpfxYp2XDGSI0sR9CXZaLJpQ74xMGLiIkQXJzQ==
-  dependencies:
-    valid-url "1.0.9"
-
 utif@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/utif/-/utif-2.0.1.tgz#9e1582d9bbd20011a6588548ed3266298e711759"
@@ -5235,7 +5229,7 @@ v8-compile-cache@^2.0.0, v8-compile-cache@^2.0.3:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
 
-valid-url@1.0.9:
+valid-url@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/valid-url/-/valid-url-1.0.9.tgz#1c14479b40f1397a75782f115e4086447433a200"
   integrity sha1-HBRHm0DxOXp1eC8RXkCGRHQzogA=
