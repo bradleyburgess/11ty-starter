@@ -2253,10 +2253,10 @@ electron-to-chromium@^1.4.118:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.118.tgz#2d917c71712dac9652cc01af46c7d0bd51552974"
   integrity sha512-maZIKjnYDvF7Fs35nvVcyr44UcKNwybr93Oba2n3HkKDFAtk0svERkLN/HyczJDS3Fo4wU9th9fUQd09ZLtj1w==
 
-eleventy-plugin-broken-links@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/eleventy-plugin-broken-links/-/eleventy-plugin-broken-links-2.0.1.tgz#4bb4eaebd853a4b2cefb32cb1b5ef1476124e9ad"
-  integrity sha512-GwzhrWhhxRtgIkJf7c1vCEl3HFDKfWTGW5hArqbRn5htPmWa5Gca/pWbCUw0V8pAxRpIroWxCxzLx9dA8OUrZQ==
+eleventy-plugin-broken-links@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/eleventy-plugin-broken-links/-/eleventy-plugin-broken-links-2.0.2.tgz#76a0237698be462f5fc140a52a02de325185d540"
+  integrity sha512-bgqqQ1U9rD7xb+fe+WBBcMeW6L7iEiOhSTv8pzucHZh+44n3dei+dEQHw0PgAN10lrfjpOpNQWeg+y4866HJlw==
   dependencies:
     "@11ty/eleventy-fetch" "^3.0.0"
     debug "^4.3.4"
