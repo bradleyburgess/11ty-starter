@@ -31,7 +31,7 @@
     "dotenv": "^16.0.2",
     "eleventy-plugin-broken-links": "^2.0.3",
     "eleventy-plugin-gen-favicons": "^1.1.0",
-    "eslint": "^8.23.1",
+    "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "html-minifier": "^4.0.0",
